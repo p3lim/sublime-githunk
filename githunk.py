@@ -1,24 +1,11 @@
 import os
 import sublime
-from sublime_plugin import WindowCommand
+from sublime_plugin import WindowCommand, TextCommand
 
 settings = None
 
 MODE_TITLE = 'STAGING: '
 MESSAGE_DIRTY = 'Please save your changes before attempting hunk staging.'
-MESSAGE_HELP = '''\
-
-	Key Bindings:
-
-[n] next hunk
-[p] prev hunk
-[h] stage hunk
-[d] discard hunk
-[?] toggle help
-
-[escape] exit mode
-
-'''
 
 class plugin_loaded():
 	'''
@@ -95,9 +82,6 @@ class GitHunkToggleModeCommand(WindowCommand):
 
 			# go to first modification
 			self.window.run_command('git_hunk_next')
-
-			if settings.get('show_help', True) is True:
-				self.window.run_command('git_hunk_toggle_help', {'force': True})
 		else:
 			# disable mode by closing the view and re-opening the file
 			view.settings().set('git_hunk.stage_mode', False)
@@ -163,19 +147,10 @@ class GitHunkRevertCommand(WindowCommand):
 		view.run_command('git_hunk_next')
 
 
-class GitHunkToggleHelpCommand(WindowCommand):
+class GitHunkShowHelpCommand(TextCommand):
 	'''
 	Toggles help panel.
-
-	:arg bool force: Force the panel to show or hide
 	'''
-	def run(self, **kwargs):
-		sublime.set_timeout_async(lambda: self.run_async(**kwargs), 0)
-
-	def run_async(self, force=None):
-		if force is True or not panel.is_shown():
-			panel.show(MESSAGE_HELP)
-			# pass
-		elif force is False or panel.is_shown():
-			panel.hide()
-			# pass
+	def run(self, edit):
+		html = sublime.load_resource('Packages/GitHunk/help.html')
+		self.view.show_popup(html, 0, -1, 400, 400)

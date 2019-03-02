@@ -1,6 +1,2 @@
 {
-	/*
-		Shows the help window when entering staging mode.
-	*/
-	"show_help": true
 }

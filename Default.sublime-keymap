@@ -37,7 +37,7 @@
 	},
 	{
 		"keys": ["?"],
-		"command": "git_hunk_toggle_help",
+		"command": "git_hunk_show_help",
 		"context": [
 			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
 			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
