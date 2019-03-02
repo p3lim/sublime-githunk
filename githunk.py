@@ -81,6 +81,8 @@ class GitHunkToggleModeCommand(WindowCommand):
 			view.settings().set('git_hunk.stage_mode', False)
 			view.set_read_only(False)
 
+			# TODO: somehow disable all the inline diffs
+
 
 class GitHunkNextCommand(WindowCommand):
 	'''
@@ -93,9 +95,7 @@ class GitHunkNextCommand(WindowCommand):
 		view = self.window.active_view()
 		view.run_command('next_modification')
 		view.run_command('toggle_inline_diff', {'prefer_hide': True})
-		# TODO: clear selection?
-		# TODO: if the hunk is unselected, the diff colors go out the window :/
-		#       maybe color the selection green? use diff.deleted.char and diff.inserted.char colors? idk
+		# TODO: force toggle on the diff
 
 
 class GitHunkPrevCommand(WindowCommand):
@@ -109,9 +109,7 @@ class GitHunkPrevCommand(WindowCommand):
 		view = self.window.active_view()
 		view.run_command('prev_modification')
 		view.run_command('toggle_inline_diff', {'prefer_hide': True})
-		# TODO: clear selection?
-		# TODO: if the hunk is unselected, the diff colors go out the window :/
-		#       maybe color the selection green? use diff.deleted.char and diff.inserted.char colors? idk
+		# TODO: force toggle on the diff
 
 
 class GitHunkStageCommand(WindowCommand):
