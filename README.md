@@ -14,13 +14,18 @@ In this mode the view is read-only, and has a custom set of key bindings:
 
 Currently the staging isn't implemented.
 
-#### TODO
+#### TODO / Issues
 
 - Fix staging
-- Can we recolor the selection of an inserted hunk?
-	- When the cursor is not selecting the insert in the hunk, the inserted part is green,
-	  but when we select it it's theme-default (blue)
+	- there's no built-in command for this
 - Find a way to display to the user that they're in "staging mode"
+	- we can't set the view name, as that loses the file context
+- Make sure the inline diff is shown for the hunk we're moving to
+	- limited by available commands in Sublime Text
+- Hide all (remaining) inline diffs when exiting staging mode
+	- limited by available commands in Sublime Text
+- (Maybe) show all inline diffs when entering staging mode
+	- limited by available commands in Sublime Text
 
 ## Options
 
