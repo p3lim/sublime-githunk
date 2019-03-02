@@ -14,6 +14,13 @@ In this mode the view is read-only, and has a custom set of key bindings:
 
 Currently the staging and discarding doesn't work.
 
+#### TODO
+
+- Fix staging and discarding
+	- If we use built-in commands, can we recolor the selection in a inserted hunk?
+- Preserve history when exiting mode
+	- Currently we have to re-open the file, lets find a better way
+
 ## Options
 
 Users can override the options in `Packages/User/GitHunk.sublime-settings`.
