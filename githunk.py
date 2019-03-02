@@ -51,13 +51,12 @@ class panel():
 
 class GitHunkToggleModeCommand(WindowCommand):
 	'''
+	Toggles the staging mode.
 	'''
 	def run(self, **kwargs):
 		sublime.set_timeout_async(lambda: self.run_async(**kwargs), 0)
 
 	def run_async(self):
-		'''
-		'''
 		view = self.window.active_view()
 
 		if view.is_dirty():
@@ -100,7 +99,7 @@ class GitHunkNextCommand(WindowCommand):
 		view = self.window.active_view()
 		view.run_command('next_modification')
 		view.run_command('toggle_inline_diff', {'prefer_hide': True})
-		# TODO: clear selection
+		# TODO: clear selection?
 		# TODO: if the hunk is unselected, the diff colors go out the window :/
 		#       maybe color the selection green? use diff.deleted.char and diff.inserted.char colors? idk
 
@@ -116,7 +115,7 @@ class GitHunkPrevCommand(WindowCommand):
 		view = self.window.active_view()
 		view.run_command('prev_modification')
 		view.run_command('toggle_inline_diff', {'prefer_hide': True})
-		# TODO: clear selection
+		# TODO: clear selection?
 		# TODO: if the hunk is unselected, the diff colors go out the window :/
 		#       maybe color the selection green? use diff.deleted.char and diff.inserted.char colors? idk
 
