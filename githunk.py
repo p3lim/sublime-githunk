@@ -87,16 +87,15 @@ class GitHunkToggleModeCommand(WindowCommand):
 			# enable mode
 			view.settings().set('git_hunk.stage_mode', True)
 			view.set_name(MODE_TITLE + os.path.basename(file_path))
+			view.set_read_only(True)
 
 			# TODO: reset cursor top top
 
 			# go to first modification
-			view.run_command('git_hunk_next')
+			self.window.run_command('git_hunk_next')
 
 			if settings.get('show_help', True) is True:
-				view.run_command('git_hunk_toggle_help', {'force': True}) # doesn't work
-
-			view.set_read_only(True)
+				self.window.run_command('git_hunk_toggle_help', {'force': True})
 		else:
 			# disable mode by closing the view and re-opening the file
 			view.settings().set('git_hunk.stage_mode', False)

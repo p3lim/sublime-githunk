@@ -12,8 +12,7 @@ In this mode the view is read-only, and has a custom set of key bindings:
 - `?` to toggle help text
 - `escape` to exit mode
 
-Currently the staging and discarding doesn't work.  
-Also, the help panel doesn't show by default.
+Currently the staging and discarding doesn't work.
 
 ## Options
 
