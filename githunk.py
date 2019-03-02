@@ -123,7 +123,11 @@ class GitHunkStageCommand(WindowCommand):
 		sublime.set_timeout_async(lambda: self.run_async(**kwargs), 0)
 
 	def run_async(self, force=True):
+		view = self.window.active_view()
+		view.set_read_only(False)
 		# TODO: stage
+		view.set_read_only(True)
+		self.window.run_command('save')
 		self.window.run_command('git_hunk_next')
 
 
@@ -135,7 +139,11 @@ class GitHunkRevertCommand(WindowCommand):
 		sublime.set_timeout_async(lambda: self.run_async(**kwargs), 0)
 
 	def run_async(self, force=True):
+		view = self.window.active_view()
+		view.set_read_only(False)
 		self.window.run_command('revert_modification') # doesn't work
+		view.set_read_only(True)
+		self.window.run_command('save')
 		self.window.run_command('git_hunk_next')
 
 
