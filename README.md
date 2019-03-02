@@ -12,12 +12,15 @@ In this mode the view is read-only, and has a custom set of key bindings:
 - `?` to toggle help text
 - `escape` to exit mode
 
-Currently the staging and discarding doesn't work.
+Currently the staging isn't implemented.
 
 #### TODO
 
-- Fix staging and discarding
-	- If we use built-in commands, can we recolor the selection in a inserted hunk?
+- Fix staging
+- Can we recolor the selection of an inserted hunk?
+	- When the cursor is not selecting the insert in the hunk, the inserted part is green,
+	  but when we select it it's theme-default (blue)
+- Find a way to display to the user that they're in "staging mode"
 
 ## Options
 
