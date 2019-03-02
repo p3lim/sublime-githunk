@@ -30,7 +30,6 @@ class panel():
 		panel.run_command('right_delete')
 		panel.run_command('insert', {'characters': msg})
 		window.run_command('show_panel', {'panel': 'output.githunk'})
-		# TODO: re-adjust height to show the text fully
 
 	@staticmethod
 	def hide():
@@ -39,7 +38,6 @@ class panel():
 		'''
 		window = sublime.active_window()
 		window.destroy_output_panel('githunk')
-		# window.run_command('hide_panel', {'panel': 'output.githunk'})
 
 	@staticmethod
 	def is_shown():
