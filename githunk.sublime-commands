@@ -14,4 +14,8 @@
 			"base_file": "${packages}/GitHunk/Default.sublime-settings"
 		}
 	},
+	{
+		"caption": "GitHunk: Toggle Staging Mode",
+		"command": "git_hunk_toggle_mode"
+	}
 ]
