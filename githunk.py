@@ -89,7 +89,9 @@ class GitHunkToggleModeCommand(WindowCommand):
 			view.set_name(MODE_TITLE + os.path.basename(file_path))
 			view.set_read_only(True)
 
-			# TODO: reset cursor top top
+			# reset cursor
+			view.sel().clear()
+			view.sel().add(sublime.Region(0, 0))
 
 			# go to first modification
 			self.window.run_command('git_hunk_next')
