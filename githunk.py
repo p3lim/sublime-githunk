@@ -81,6 +81,7 @@ class GitHunkToggleModeCommand(WindowCommand):
 		else:
 			# disable mode by closing the view and re-opening the file
 			view.settings().set('git_hunk.stage_mode', False)
+			view.set_read_only(False)
 
 
 class GitHunkNextCommand(WindowCommand):
