@@ -1,6 +1,6 @@
 # [GitHunk](//packagecontro.io/packages/GitHunk)
 
-This is a _proof of concept_ plugin that extends the inline diff feature added to Sublime Text in build 3193.
+This is a _work in progress_ plugin that extends the inline diff feature added to Sublime Text in build 3193.
 
 It will allow you to enter a "hunk staging mode" for the currently focused view.
 In this mode the view is read-only, and has a custom set of key bindings:
