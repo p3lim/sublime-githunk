@@ -1,0 +1,17 @@
+[
+	{
+		"caption": "Preferences: GitHunk Settings",
+		"command": "edit_settings",
+		"args": {
+			"base_file": "${packages}/GitHunk/GitHunk.sublime-settings",
+			"default": "// Any settings in this file overrides the default ones\n{\n\t$0\n}\n"
+		}
+	},
+	{
+		"caption": "Preferences: GitHunk Key Bindings",
+		"command": "edit_settings",
+		"args": {
+			"base_file": "${packages}/GitHunk/Default.sublime-settings"
+		}
+	},
+]

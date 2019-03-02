@@ -1,0 +1,54 @@
+[
+	{
+		"keys": ["ctrl+shift+g"],
+		"command": "git_hunk_toggle_mode"
+	},
+	{
+		"keys": ["n"],
+		"command": "git_hunk_next",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["p"],
+		"command": "git_hunk_prev",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["h"],
+		"command": "git_hunk_stage",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["d"],
+		"command": "git_hunk_revert",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["?"],
+		"command": "git_hunk_toggle_help",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
+		]
+	},
+	{
+		"keys": ["escape"],
+		"command": "git_hunk_toggle_mode",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+			{ "key": "setting.git_hunk.stage_mode", "operator": "equal", "operand": true }
+		]
+	}
+]
