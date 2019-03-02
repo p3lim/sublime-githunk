@@ -65,14 +65,11 @@ class GitHunkToggleModeCommand(WindowCommand):
 		panel.hide()
 
 		if view.settings().get('git_hunk.stage_mode', False) is False:
-			file_path = view.file_name()
-
-			# cache the file path
-			view.settings().set('git_hunk.file_path', file_path)
+			# file_path = view.file_name()
+			# view.set_name(MODE_TITLE + os.path.basename(file_path))
 
 			# enable mode
 			view.settings().set('git_hunk.stage_mode', True)
-			view.set_name(MODE_TITLE + os.path.basename(file_path))
 			view.set_read_only(True)
 
 			# reset cursor
@@ -84,8 +81,6 @@ class GitHunkToggleModeCommand(WindowCommand):
 		else:
 			# disable mode by closing the view and re-opening the file
 			view.settings().set('git_hunk.stage_mode', False)
-			self.window.run_command('close_file')
-			self.window.open_file(view.settings().get('git_hunk.file_path'))
 
 
 class GitHunkNextCommand(WindowCommand):
